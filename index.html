@@ -54,6 +54,29 @@
 
                 <!-- Table Selector / Status -->
                 <div class="flex items-center gap-4">
+
+                    <!-- Contact Us -->
+                    <button onclick="openContactModal()"
+                    class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-amber-50 text-slate-600 hover:text-pink-500 transition">
+
+                    <i class="fa-brands fa-instagram text-lg"></i>
+
+                    <span class="text-sm font-medium hidden md:inline">
+                        Contact Us
+                    </span>
+                    </button>
+
+                    <!-- About Us -->
+                    <button onclick="openAboutModal()"
+                        class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-amber-50 text-slate-600 hover:text-amber-500 transition">
+
+                        <i class="fa-solid fa-circle-info text-lg"></i>
+
+                        <span class="text-sm font-medium hidden md:inline">
+                            About Us
+                        </span>
+                    </button>
+
                     <div class="bg-amber-50 px-3 py-1.5 rounded-lg flex items-center gap-2 border border-amber-100">
                         <i class="fa-solid fa-chair text-amber-600 text-sm"></i>
                         <select id="tableSelector" class="bg-transparent text-sm font-semibold text-amber-800 outline-none cursor-pointer">
@@ -272,7 +295,6 @@
                     </div>
                 </div>
 
-                <!-- QRIS Simulated Display -->
                <!-- QRIS Simulated Display -->
                 <div id="qrisContainer"
                      class="hidden p-4 bg-slate-50 border border-slate-200 rounded-xl flex flex-col items-center text-center space-y-3">
@@ -281,7 +303,6 @@
 
                         <img
                             src="qris.jpeg"
-                            alt="QRIS Lumeluv"
                             class="w-full h-full object-contain rounded">
 
                     </div>
@@ -487,6 +508,87 @@
     <div id="toastAlert" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-3 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl max-w-sm">
         <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
         <span id="toastMessage" class="text-xs font-semibold">Berhasil dimasukkan keranjang!</span>
+    </div>
+
+    <!-- Contact Us Modal -->
+    <div id="contactModal"
+     class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+
+    <div class="bg-white rounded-2xl shadow-xl w-[90%] max-w-md p-6 relative">
+
+        <!-- Tombol Close -->
+        <button onclick="closeContactModal()"
+                class="absolute top-4 right-4 text-gray-500 hover:text-red-500">
+            <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+        <h2 class="text-2xl font-bold text-center text-amber-600 mb-6">
+            Contact Us
+        </h2>
+        <div class="space-y-4">
+
+            <!-- Instagram -->
+            <a href="https://instagram.com/lumeluv_"
+               target="_blank"
+               class="flex items-center gap-4 p-3 rounded-xl hover:bg-pink-50 transition">
+                <i class="fa-brands fa-instagram text-3xl text-pink-500"></i>
+                <div>
+                    <p class="font-semibold">Instagram</p>
+                    <p class="text-sm text-gray-500">@lumeluv_</p>
+                </div>
+                </a>
+            </div>
+            </div>
+            </div>
+
+            <!-- About Us Modal -->
+            <div id="aboutModal"
+                 class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+
+            <div class="bg-white rounded-2xl shadow-xl w-[90%] max-w-lg p-6 relative">
+
+            <!-- Tombol Close -->
+            <button onclick="closeAboutModal()"
+                    class="absolute top-4 right-4 text-gray-500 hover:text-red-500">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <!-- Judul -->
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 mx-auto mb-3 bg-amber-500 rounded-full flex items-center justify-center text-white shadow-lg">
+                    <i class="fa-solid fa-fire-burner text-2xl"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-amber-600">
+                    About Luméluv
+                </h2>
+                <p class="text-sm text-gray-500 italic">
+                    Soft Bites, Slow Life
+                </p>
+            </div>
+
+            <!-- Isi -->
+            <div class="space-y-4 text-gray-700 leading-relaxed">
+                <p><center>
+                    Luméluv adalah makanan yang menghadirkan dessert premium dengan isian lumer berkualitas tinggi.
+                    Setiap produk dibuat fresh setiap hari menggunakan bahan pilihan agar memberikan pengalaman menikmati camilan yang enak, lembut, dan berkesan.
+                </center></p>
+                <div>
+                    <h3 class="font-bold text-amber-600 mb-2">
+                        
+                    </h3>
+                    <p>
+                        
+                    </p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-amber-600 mb-2">
+                        
+                    </h3>
+                    <ul class="list-disc ml-5 space-y-1">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- JavaScript Application Logic -->
@@ -1077,6 +1179,31 @@
 
             showToast("Struk digital disalin ke clipboard!");
         }
+
+        // ===============================
+            // CONTACT US MODAL
+            // ===============================
+
+            function openContactModal() {
+                document.getElementById("contactModal").classList.remove("hidden");
+            }
+
+            function closeContactModal() {
+                document.getElementById("contactModal").classList.add("hidden");
+            }
+
+            // ===============================
+            // ABOUT US MODAL
+            // ===============================
+
+            function openAboutModal() {
+                document.getElementById("aboutModal").classList.remove("hidden");
+            }
+
+            function closeAboutModal() {
+                document.getElementById("aboutModal").classList.add("hidden");
+            }
+
     </script>
 </body>
 </html>
