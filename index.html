@@ -33,9 +33,90 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #94a3b8;
         }
+
+        /* ================= LOADING ================= */
+
+.dot{
+
+    width:12px;
+    height:12px;
+
+    border-radius:999px;
+
+    background:#f59e0b;
+
+    animation:bounce 1s infinite;
+
+}
+
+.dot:nth-child(2){
+
+    animation-delay:.2s;
+
+}
+
+.dot:nth-child(3){
+
+    animation-delay:.4s;
+
+}
+
+.dot:nth-child(4){
+
+    animation-delay:.6s;
+
+}
+
+@keyframes bounce{
+
+    0%,80%,100%{
+
+        transform:translateY(0);
+
+        opacity:.5;
+
+    }
+
+    40%{
+
+        transform:translateY(-12px);
+
+        opacity:1;
+    }
+}
     </style>
 </head>
 <body class="bg-amber-50/30 text-slate-800 min-h-screen flex flex-col">
+
+<!-- ================= LOADING SCREEN ================= -->
+<div id="loadingScreen"
+    class="fixed inset-0 bg-white flex items-center justify-center z-[9999] transition-opacity duration-700">
+    <div class="text-center">
+
+        <!-- Logo -->
+        <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-r from-amber-500 to-orange-500
+        flex items-center justify-center shadow-xl">
+            <i class="fa-solid fa-fire-burner text-white text-4xl animate-pulse"></i>
+        </div>
+
+        <!-- Nama -->
+        <h1 class="text-4xl font-extrabold mt-6
+        bg-gradient-to-r from-amber-600 to-orange-500 bg-clip-text text-transparent">
+            Luméluv
+        </h1>
+        <p class="text-gray-500 mt-2 italic">
+            Soft Bites, Slow Life
+        </p>
+
+        <!-- Loading Dots -->
+        <div class="flex justify-center gap-2 mt-8">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+</div>
 
     <!-- Header -->
     <header class="bg-white border-b border-amber-100 sticky top-0 z-30 shadow-sm">
@@ -118,7 +199,7 @@
 
     <!-- Main Content Grid -->
     <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row gap-6 relative">
-        
+
         <!-- Left Section: Menu Grid -->
         <div class="flex-1 flex flex-col gap-6">
             
@@ -590,6 +671,140 @@
             </div>
         </div>
     </div>
+
+    <!-- ================= TESTIMONI ================= -->
+<section class="mt-12">
+    <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-slate-800">
+            Apa Kata Pelanggan?
+        </h2>
+        <p class="text-slate-500 mt-2">
+            Kepuasan pelanggan adalah prioritas utama Luméluv.
+        </p>
+
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-2xl shadow-lg p-6">
+            <div class="text-yellow-400 text-lg mb-3">
+                ★★★★★
+            </div>
+            <p class="text-slate-600 italic">
+                "Kulit risolnya renyah, isiannya benar-benar lumer.
+                Recommended banget!"
+            </p>
+            <div class="mt-5 font-bold text-amber-600">
+                — Aisyah
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-2xl shadow-lg p-6">
+
+            <div class="text-yellow-400 text-lg mb-3">
+                ★★★★★
+            </div>
+            <p class="text-slate-600 italic">
+                "Matcha Cheese favoritku!
+                Manisnya pas dan tidak bikin enek."
+            </p>
+            <div class="mt-5 font-bold text-amber-600">
+                — Rina
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-2xl shadow-lg p-6">
+            <div class="text-yellow-400 text-lg mb-3">
+                ★★★★★
+            </div>
+            <p class="text-slate-600 italic">
+                "Pelayanannya cepat,
+                kemasannya juga premium."
+            </p>
+            <div class="mt-5 font-bold text-amber-600">
+                — Dimas
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- ================= FOOTER ================= -->
+<footer class="bg-slate-900 text-white mt-12">
+    <div class="max-w-7xl mx-auto px-6 py-12">
+        <div class="grid md:grid-cols-3 gap-10">
+
+            <!-- Brand -->
+            <div>
+                <h2 class="text-3xl font-bold text-amber-400">
+                    Luméluv
+                </h2>
+                <p class="mt-3 text-gray-300 leading-relaxed">
+                    Soft Bites, Slow Life.
+                </p>
+                <p>Menyajikan dessert premium dengan isian lumer yang dibuat fresh setiap hari menggunakan bahan berkualitas.
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4">
+                    Contact Us
+                </h3>
+                <div class="space-y-3">
+                    <a href="https://instagram.com/lumeluv"
+                        target="_blank"
+                        class="flex items-center gap-3 hover:text-pink-400 transition">
+                        <i class="fa-brands fa-instagram"></i>
+                        @lumeluv_
+                    </a>
+
+                    <a href="https://wa.me/628123456789"
+                        target="_blank"
+                        class="flex items-center gap-3 hover:text-green-400 transition">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        0853 8247 6588
+                    </a>
+
+                    <a href="mailto:lumeluv@gmail.com"
+                        class="flex items-center gap-3 hover:text-blue-400 transition">
+                        <i class="fa-solid fa-envelope"></i>
+                        lumeluv@gmail.com
+                    </a>
+                </div>
+            </div>
+
+            <!-- Information -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4">
+                    Information
+                </h3>
+
+                <div class="space-y-3 text-gray-300">
+
+                    <p>
+                        <i class="fa-solid fa-location-dot text-amber-400 mr-2"></i>
+                        Pangkalpinang, Bangka Belitung
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-clock text-amber-400 mr-2"></i>
+                        09.00 - 21.00 WIB
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-utensils text-amber-400 mr-2"></i>
+                        Fresh Everyday
+                    </p>
+                </div>
+            </div>
+        </div>
+        <hr class="my-8 border-slate-700">
+        <div class="text-center text-gray-400 text-sm">
+            © 2026 <span class="text-amber-400 font-semibold">Luméluv</span>.
+            All Rights Reserved.
+        </div>
+    </div>
+</footer>
 
     <!-- JavaScript Application Logic -->
     <script>
@@ -1203,6 +1418,25 @@
             function closeAboutModal() {
                 document.getElementById("aboutModal").classList.add("hidden");
             }
+
+        // ================= LOADING SCREEN =================
+        window.addEventListener("load", () => {
+
+        setTimeout(() => {
+
+        const loading = document.getElementById("loadingScreen");
+
+        loading.style.opacity = "0";
+
+        setTimeout(() => {
+
+            loading.style.display = "none";
+
+        },700);
+
+    },1800);
+
+});
 
     </script>
 </body>
